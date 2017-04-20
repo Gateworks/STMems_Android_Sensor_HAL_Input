@@ -32,11 +32,7 @@ LOCAL_MODULE_RELATIVE_PATH := hw
 endif
 LOCAL_MODULE_TAGS := optional
 
-ifdef TARGET_BOARD_PLATFORM
-LOCAL_MODULE := sensors.$(TARGET_BOARD_PLATFORM)
-else
-LOCAL_MODULE := sensors.default
-endif # TARGET_BOARD_PLATFORM
+LOCAL_MODULE := sensors.stm
 
 define all-module-under-lib
 	$(wildcard $(LOCAL_PATH)/lib/*/module.mk)
@@ -102,7 +98,7 @@ endef
 # E.g.: to enable LSM6DS0 + LIS3MDL sensor                                     #
 #                ENABLED_SENSORS := LSM6DS0 LIS3MDL                            #
 ################################################################################
-ENABLED_SENSORS := LIS2DH12
+ENABLED_SENSORS := LSM9DS1
 ENABLED_MODULES :=
 
 LOCAL_C_INCLUDES := $(call all-dir-under-lib) \
