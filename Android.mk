@@ -25,11 +25,7 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_OWNER := STMicroelectronics
 
-ifeq ($(shell test $(PLATFORM_SDK_VERSION) -lt 21 && echo true),true)
-LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/../vendor/lib/hw
-else
-LOCAL_MODULE_RELATIVE_PATH := hw
-endif
+LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_MODULE := sensors.stm
